@@ -11,10 +11,9 @@ import hello.core.order.OrderServiceImpl;
 //Order Test
 public class OrderApp {
     public static void main(String[] args) {
-        //맴버를 회원가입 시켜야 하기 때문에 memberService필요 ,,,
-        MemberService memberService = new MemberServiceImpl();
-        OrderService orderService = new OrderServiceImpl();
-
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
+        OrderService orderService = appConfig.orderService();
         //맴버를 만들고 회원가입을 시킨다.
         Long memberId=1L;
         Member member = new Member(memberId, "memberA", Grade.VIP);
